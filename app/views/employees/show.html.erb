@@ -81,9 +81,16 @@
                       <%= link_to edit_employee_path(@employee), class: "btn btn-success" do %>
                         <i class="fa fa-edit m-right-xs"></i> Editar Empleado
                       <% end %>
-                      <%= link_to suprimir_path(:id => @employee.id), class: "btn btn-danger" do %>
-                        <i class="fa fa-times m-right-xs"></i> Suprimir Empleado
+                      <% if @employee.employee_status %>
+                        <%= link_to suprimir_path(:id => @employee.id), class: "btn btn-danger" do %>
+                          <i class="fa fa-times m-right-xs"></i> Suprimir Empleado
+                        <% end %>
+                      <% else %>
+                        <%= link_to reactivar_path(:id => @employee.id), class: "btn btn-danger" do %>
+                          <i class="fa fa-times m-right-xs"></i> Reactivar Empleado
+                        <% end %>
                       <% end %>
+
 
                       <br />
 
@@ -108,7 +115,7 @@
                       <!-- end of skills -->
 
                     </div>
-                    <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="col-md-9 col-sm-9 col-xs-12">con
                       <div class="" role="tabpanel" data-example-id="togglable-tabs">
                         <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                           <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Informacion General</a>

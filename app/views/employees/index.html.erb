@@ -20,21 +20,46 @@
     <div class="clearfix"></div>
 
     <div class="row">
-
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel" style="height:600px; ">
-          <div class="x_title">
-            <h2>Listado de Empleados</h2>
-            <div class="clearfix"></div>
-          </div>
-          <div style="float: center; border-left: 500px">
-            <div class="js-employees-table">
-              <%= render partial: "table", locals: { employees: @employees} %>
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+          <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Empleados Activos</a>
+            </li>
+            <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Empleados Inactivos</a>
+            </li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div style="float: center; border-left: 800px">
+                <div class="js-employees-table">
+                  <%= render partial: "table", locals: { employees: @employees} %>
+                </div>
+              </div>
             </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab" style="text-align: center">
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div style="float: center; border-left: 800px">
+                <div class="js-employees-table">
+                  <%= render partial: "table", locals: { employees: @inactiveemployees} %>
+                </div>
+              </div>
+            </div>
+            </div>
+
           </div>
-          <%= link_to "Cancelar", employees_path%>
         </div>
+        <%= link_to "Cancelar", employees_path%>
       </div>
+
+        </div>
+    </div>
+  </div>
     </div>
   </div>
 </div>

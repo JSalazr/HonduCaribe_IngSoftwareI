@@ -97,6 +97,8 @@
                   <%= f.label :avatar, "Imagen" %>
                   <%= f.file_field :avatar %>
                 </div>
+                
+
                 <div>
                   <%= f.label :work_structure_id, "Puesto" %>
                   <%= f.select(:work_structure_id, options_for_select(WorkStructure.all.pluck(:department, :id)))%>

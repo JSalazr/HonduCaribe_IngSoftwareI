@@ -37,7 +37,7 @@
                 <li><%= link_to "HonduCaribe", root_path%>
                 <% unless current_user %>
                 </li>
-                <li><a href="index2.html">Inciar Sesion</a>
+                <li><%= link_to "Iniciar Sesión", login_path %></li>
                 <li>
                   <%= link_to new_user_path do %>
                     <span class="fa fa-address-card-o"></span>
