@@ -46,13 +46,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-<<<<<<< HEAD
-*.cache
-*.log
-=======
 *.log
 *.cache
 *.lock
 *.scss
-Gemfile
->>>>>>> 24fac53f0eea2eb664692df6a19a01332af54c28
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

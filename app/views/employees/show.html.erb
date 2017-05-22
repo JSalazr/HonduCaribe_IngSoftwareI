@@ -115,7 +115,7 @@
                       <!-- end of skills -->
 
                     </div>
-                    <div class="col-md-9 col-sm-9 col-xs-12">con
+                    <div class="col-md-9 col-sm-9 col-xs-12">
                       <div class="" role="tabpanel" data-example-id="togglable-tabs">
                         <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                           <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Informacion General</a>
@@ -296,36 +296,24 @@
                                         <%end%>
                                 </tbody>
                               </table>
-
                               <% else %>
                                 <p><em>No hay Informacion.</em></p>
                               <% end %>
-
                           </div>
                           <div role="tabpanel" class="tab-pane fade" id="tab_content6" aria-labelledby="profile-tab" style="text-align: center">
-                            <% if @employee.hours.any? %>
-                              <table class="data table table-striped no-margin" style="text-align: center; width: 100%">
-                              	<thead>
-                              		<tr>
-                                    <th style= "text-align: center">Hora de entrada</th>
-                              			<th style= "text-align: center">Hora de salida</th>
-                              		</tr>
-                              	</thead>
-                              	<tbody>
-                              			<%- @employee.hours.each do |f| %>
-                              				<tr>
-                              					<td><%= nice_date_time(f.time_in) %></td>
-                              					<td><%= nice_date_time(f.time_out) %></td>
-                              				</tr>
-                              			<%- end %>
-                              	</tbody>
-                              </table>
-                              <% else %>
-                                <p><em>No hay Informacion.</em></p>
-                              <% end %>
-                              <%= link_to new_employee_hour_path(@employee), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#addHours', class: "btn btn-success"} do %>
-                                <i class="fa fa-edit m-right-xs"></i> Anadir Horas
-                              <% end %>
+                            <%= form_for(:report, remote: true, html: {id:"date_form", class:"row"}) do |f| %>
+                              <div class="col-xs-6">
+                                <%= f.label :from, "Desde: ", class:"col-xs-2" %>
+                                <%= f.date_field :from, class: "form-control col-xs-10", value: Date.today, onchange: "$('#date_form').submit();" %>
+                              </div>
+                              <div class="col-xs-6">
+                                <%= f.label :to, "Hasta: ", class:"col-xs-2"%>
+                                <%= f.date_field :to, class: "form-control col-xs-10", value: Date.today, onchange: "$('#date_form').submit();" %>
+                              </div>
+                            <% end %>
+                            <div id="hours_show">
+                              <%= render partial: "hours_show", locals: {employee: @employee, from: Date.today, to: Date.today} %>
+                            </div>
                           </div>
                         </div>
                       </div>

@@ -40,8 +40,7 @@ class Employee < ActiveRecord::Base
 	end
 
 
-	def self.TieneHijosMenores
-
+	def self.TieneHijosMenoresW
 		employees = Employee.all
 		employees.each do |e|
 			if e.dependants.any?
@@ -57,8 +56,6 @@ class Employee < ActiveRecord::Base
 			end
 			e.save!
 		end
-
-
 	end
 
 	def get_hours(time_in, time_out)
@@ -77,7 +74,6 @@ class Employee < ActiveRecord::Base
 				hours["100"] += ((h.time_in.change(hour:0)..h.time_out.change(hour:4)).cover?(Time.at(x)) ? 1 : 0)
 			end
 		end
-
 		return hours
 	end
 
