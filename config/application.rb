@@ -25,5 +25,7 @@ module GentelellaOnRails
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components', 'gentelella', 'production')
 
+    config.assets.initialize_on_precompile = false
+
   end
 end
