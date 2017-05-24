@@ -79,7 +79,7 @@ class EmployeesController < ApplicationController
   end
 
   def bonoEducativo
-    @employees = Employee.All
+    @employees = Employee.all
   end
 
   def reactivar
