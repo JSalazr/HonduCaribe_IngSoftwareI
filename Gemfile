@@ -35,7 +35,7 @@ gem "paperclip", git: "https://github.com/thoughtbot/paperclip.git", branch: "ma
 gem 'aws-sdk'
 gem 'fog'
 
-gem 'rails_12factor', '0.0.2'
+gem 'rails_12factor', '~> 0.0.3'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
