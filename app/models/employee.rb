@@ -9,7 +9,7 @@ class Employee < ActiveRecord::Base
 	:url => ":s3_domain_url",
 	:path => "/assets/photos/:id/:style/:basename.:extension",
 	:s3_host_name => "s3-website-us-west-2.amazonaws.com",
-	:s3_credentials => :"#{Rails.root}/config/development.rb"
+	:s3_credentials => :"#{Rails.root}/config/s3.yml"
 
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
