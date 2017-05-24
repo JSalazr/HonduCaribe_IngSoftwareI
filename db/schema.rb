@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524194226) do
+ActiveRecord::Schema.define(version: 20170524222732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,14 @@ ActiveRecord::Schema.define(version: 20170524194226) do
     t.datetime "year_end"
     t.boolean  "completed"
     t.text     "title_description"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "employee_id"
     t.string   "constancia"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   add_index "educations", ["employee_id"], name: "index_educations_on_employee_id", using: :btree
@@ -194,10 +198,14 @@ ActiveRecord::Schema.define(version: 20170524194226) do
     t.datetime "year_start"
     t.datetime "year_end"
     t.text     "position"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "employee_id"
     t.string   "constancia"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   add_index "work_exps", ["employee_id"], name: "index_work_exps_on_employee_id", using: :btree
