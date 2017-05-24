@@ -41,8 +41,9 @@
                 <%- @work_structures.each do |f| %>
                   <tr>
                     <td><%= f.area_code%></td>
-                    <td><%= link_to f.department, work_structure_path(f)%></td>
-                    <td><%= f.area %></td>
+                    <% s = f.department.to_s %>
+                    <td><%= link_to f.department, department_path(f.department, f)%></td>
+                    <td><%= link_to f.area, work_structure_path(f) %></td>
                     <td><%= f.sub_area %></td>
                     <th>
 
