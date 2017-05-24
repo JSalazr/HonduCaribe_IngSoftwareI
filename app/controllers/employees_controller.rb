@@ -78,7 +78,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
   end
 
-  def BonoEducativo
+  def bonoEducativo
     Employee.TieneHijosMenores
     @employees = Employee.where(hasChildren: true)
 
