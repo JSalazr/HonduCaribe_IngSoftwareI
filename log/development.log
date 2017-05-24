@@ -47176,3 +47176,599 @@ ArgumentError (Credentials given are not a path, file, proc, or hash.):
   Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
   Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
   Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-05-24 15:15:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (2519.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_sidenav.html.erb (19.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_topnav.html.erb (7.5ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 3960ms (Views: 3855.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/employees" for 10.0.2.2 at 2017-05-24 15:16:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EmployeesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEmployee Load (0.9ms)[0m  [1mSELECT "employees".* FROM "employees" WHERE (employee_status = true)[0m
+  [1m[35mWorkStructure Load (0.1ms)[0m  SELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered employees/_table.html.erb (98.2ms)
+  [1m[35mEmployee Load (0.3ms)[0m  SELECT "employees".* FROM "employees" WHERE (employee_status = false)
+  Rendered employees/_table.html.erb (1.7ms)
+  Rendered employees/index.html.erb within layouts/application (146.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_sidenav.html.erb (20.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_topnav.html.erb (7.3ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 1113ms (Views: 1052.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/employees/1" for 10.0.2.2 at 2017-05-24 15:16:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEmployee Load (0.1ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mWorkStructure Load (0.2ms)[0m  SELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAbility Load (0.2ms)[0m  SELECT "abilities".* FROM "abilities" INNER JOIN "employee_abilities" ON "abilities"."id" = "employee_abilities"."ability_id" WHERE "employee_abilities"."employee_id" = $1  [["employee_id", 1]]
+  [1m[36mEducation Load (0.1ms)[0m  [1mSELECT "educations".* FROM "educations" WHERE "educations"."employee_id" = $1[0m  [["employee_id", 1]]
+  [1m[35mWorkExp Load (0.1ms)[0m  SELECT "work_exps".* FROM "work_exps" WHERE "work_exps"."employee_id" = $1  [["employee_id", 1]]
+  [1m[36mDependant Load (0.2ms)[0m  [1mSELECT "dependants".* FROM "dependants" WHERE "dependants"."employee_id" = $1[0m  [["employee_id", 1]]
+  [1m[35mTraining Exists (0.1ms)[0m  SELECT  1 AS one FROM "trainings" INNER JOIN "training_employees" ON "trainings"."id" = "training_employees"."training_id" WHERE "training_employees"."employee_id" = $1 LIMIT 1  [["employee_id", 1]]
+  [1m[36mTraining Load (0.1ms)[0m  [1mSELECT "trainings".* FROM "trainings" INNER JOIN "training_employees" ON "trainings"."id" = "training_employees"."training_id" WHERE "training_employees"."employee_id" = $1[0m  [["employee_id", 1]]
+  [1m[35mTrainingEmployee Load (0.3ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "abilities"."ability", "abilities"."id" FROM "abilities" INNER JOIN "work_structure_abilities" ON "abilities"."id" = "work_structure_abilities"."ability_id" WHERE "work_structure_abilities"."work_structure_id" = $1[0m  [["work_structure_id", 1]]
+  Rendered employees/show.html.erb within layouts/application (393.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_sidenav.html.erb (16.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_topnav.html.erb (5.1ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 1613ms (Views: 1268.9ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/images/original/missing.png" for 10.0.2.2 at 2017-05-24 15:16:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/vagrant/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/vagrant/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (14.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (101.0ms)
+
+
+Started GET "/employees/1/edit" for 10.0.2.2 at 2017-05-24 15:16:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmployee Load (0.2ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_errors.html.erb (0.5ms)
+  [1m[36mWorkStructure Load (0.6ms)[0m  [1mSELECT "work_structures".* FROM "work_structures"[0m
+  Rendered employees/_form.html.erb (39.4ms)
+  Rendered employees/edit.html.erb within layouts/application (84.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_sidenav.html.erb (17.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_topnav.html.erb (5.6ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 967ms (Views: 964.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/original/missing.png" for 10.0.2.2 at 2017-05-24 15:16:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/vagrant/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/vagrant/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (15.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (87.7ms)
+
+
+Started PATCH "/employees/1" for 10.0.2.2 at 2017-05-24 15:16:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxKpDl1A9u6cEDkVFAKz7JjCZTbsVXgQZeQ3WskP0OjTj4RWAd9A5OpHzRG6YXvGMlF/rhVhXQyzZFG2OcdByw==", "employee"=>{"name"=>"Jonathan Salazar", "profession"=>"Ing. Sistemas Computacionales de mentiritas", "email"=>"jonathansalazar96@gmail.com", "cellphone"=>"98799246", "birth_at"=>"1996-06-06", "birth_place"=>"San Pedro Sula", "work_id"=>"21102", "date_admission"=>"2017-02-22", "RAP_code"=>"0501199606017", "salary"=>"50000.0", "gender"=>"Hombre", "address"=>"Bo. San Cristobal", "identity_number"=>"0501199606017", "base_belong"=>"Pruebas", "contract_type"=>"Permanente", "civil_status"=>"Soltero", "bank_account"=>"255994", "employee_status"=>"true", "blood_type"=>"O-", "emergency_contact_name"=>"Johan Salazar", "emergency_contact_number"=>"33720579", "image"=>#<ActionDispatch::Http::UploadedFile:0xb5bf6e08 @tempfile=#<Tempfile:/tmp/RackMultipart20170524-4353-124gtbk.png>, @original_filename="download.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"employee[image]\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "work_structure_id"=>"1"}, "commit"=>"Actualizar", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmployee Load (0.2ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[paperclip] Trying to link /tmp/RackMultipart20170524-4353-124gtbk.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-bgjsws.png
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420170524-4353-bgjsws.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-10ru36b.png
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420170524-4353-10ru36b.png'
+  [1m[35mEmployee Exists (0.5ms)[0m  SELECT  1 AS one FROM "employees" WHERE ("employees"."work_id" = 21102 AND "employees"."id" != 1) LIMIT 1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "employees" WHERE ("employees"."name" = 'Jonathan Salazar' AND "employees"."id" != 1) LIMIT 1[0m
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420170524-4353-bgjsws.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-u19yn1.png
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420170524-4353-u19yn1.png'
+  [1m[35mSQL (0.2ms)[0m  UPDATE "employees" SET "image_file_name" = $1, "image_content_type" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "employees"."id" = $6  [["image_file_name", "download.png"], ["image_content_type", "image/png"], ["image_file_size", 2072], ["image_updated_at", "2017-05-24 15:16:15.014396"], ["updated_at", "2017-05-24 15:16:15.053333"], ["id", 1]]
+[paperclip] saving /assets/photos/1/original/download.png
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 590ms (ActiveRecord: 1.8ms)
+
+ArgumentError (Credentials given are not a path, file, proc, or hash.):
+  app/controllers/employees_controller.rb:47:in `update'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.3ms)
+
+
+Started PATCH "/employees/1" for 10.0.2.2 at 2017-05-24 15:16:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9D3yYiVhSp3N4qWsoDqNKOIz3hV0HExvasgVHtfilN8EoN86ef78l7u1UagOWUUCSKDEjY0oaXO8SHPyJyoF/A==", "employee"=>{"name"=>"Jonathan Salazar", "profession"=>"Ing. Sistemas Computacionales de mentiritas", "email"=>"jonathansalazar96@gmail.com", "cellphone"=>"98799246", "birth_at"=>"1996-06-06", "birth_place"=>"San Pedro Sula", "work_id"=>"21102", "date_admission"=>"2017-02-22", "RAP_code"=>"0501199606017", "salary"=>"50000.0", "gender"=>"Hombre", "address"=>"Bo. San Cristobal", "identity_number"=>"0501199606017", "base_belong"=>"Pruebas", "contract_type"=>"Permanente", "civil_status"=>"Soltero", "bank_account"=>"255994", "employee_status"=>"true", "blood_type"=>"O-", "emergency_contact_name"=>"Johan Salazar", "emergency_contact_number"=>"33720579", "image"=>#<ActionDispatch::Http::UploadedFile:0xb48469f8 @tempfile=#<Tempfile:/tmp/RackMultipart20170524-4353-pgtybf.png>, @original_filename="download.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"employee[image]\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "work_structure_id"=>"1"}, "commit"=>"Actualizar", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEmployee Load (0.2ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+[paperclip] Trying to link /tmp/RackMultipart20170524-4353-pgtybf.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-1v6qci7.png
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420170524-4353-1v6qci7.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-1i5zjzp.png
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420170524-4353-1i5zjzp.png'
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "employees" WHERE ("employees"."work_id" = 21102 AND "employees"."id" != 1) LIMIT 1[0m
+  [1m[35mEmployee Exists (0.2ms)[0m  SELECT  1 AS one FROM "employees" WHERE ("employees"."name" = 'Jonathan Salazar' AND "employees"."id" != 1) LIMIT 1
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420170524-4353-1v6qci7.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-yxl3qa.png
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420170524-4353-yxl3qa.png'
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "employees" SET "image_file_name" = $1, "image_content_type" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "employees"."id" = $6[0m  [["image_file_name", "download.png"], ["image_content_type", "image/png"], ["image_file_size", 2072], ["image_updated_at", "2017-05-24 15:16:53.224088"], ["updated_at", "2017-05-24 15:16:53.236300"], ["id", 1]]
+[paperclip] saving /assets/photos/1/original/download.png
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.4ms)
+
+ArgumentError (Credentials given are not a path, file, proc, or hash.):
+  app/controllers/employees_controller.rb:47:in `update'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.1ms)
+
+
+Started PATCH "/employees/1" for 10.0.2.2 at 2017-05-24 15:19:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9D3yYiVhSp3N4qWsoDqNKOIz3hV0HExvasgVHtfilN8EoN86ef78l7u1UagOWUUCSKDEjY0oaXO8SHPyJyoF/A==", "employee"=>{"name"=>"Jonathan Salazar", "profession"=>"Ing. Sistemas Computacionales de mentiritas", "email"=>"jonathansalazar96@gmail.com", "cellphone"=>"98799246", "birth_at"=>"1996-06-06", "birth_place"=>"San Pedro Sula", "work_id"=>"21102", "date_admission"=>"2017-02-22", "RAP_code"=>"0501199606017", "salary"=>"50000.0", "gender"=>"Hombre", "address"=>"Bo. San Cristobal", "identity_number"=>"0501199606017", "base_belong"=>"Pruebas", "contract_type"=>"Permanente", "civil_status"=>"Soltero", "bank_account"=>"255994", "employee_status"=>"true", "blood_type"=>"O-", "emergency_contact_name"=>"Johan Salazar", "emergency_contact_number"=>"33720579", "image"=>#<ActionDispatch::Http::UploadedFile:0xb31ef7b8 @tempfile=#<Tempfile:/tmp/RackMultipart20170524-4353-1bkjxlh.png>, @original_filename="download.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"employee[image]\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "work_structure_id"=>"1"}, "commit"=>"Actualizar", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmployee Load (0.3ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+[paperclip] Trying to link /tmp/RackMultipart20170524-4353-1bkjxlh.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-6nhsj1.png
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420170524-4353-6nhsj1.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-1bt5uhb.png
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420170524-4353-1bt5uhb.png'
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT  1 AS one FROM "employees" WHERE ("employees"."work_id" = 21102 AND "employees"."id" != 1) LIMIT 1
+  [1m[36mEmployee Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "employees" WHERE ("employees"."name" = 'Jonathan Salazar' AND "employees"."id" != 1) LIMIT 1[0m
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420170524-4353-6nhsj1.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-rrrut9.png
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420170524-4353-rrrut9.png'
+  [1m[35mSQL (0.3ms)[0m  UPDATE "employees" SET "image_file_name" = $1, "image_content_type" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "employees"."id" = $6  [["image_file_name", "download.png"], ["image_content_type", "image/png"], ["image_file_size", 2072], ["image_updated_at", "2017-05-24 15:19:53.477942"], ["updated_at", "2017-05-24 15:19:53.492367"], ["id", 1]]
+[paperclip] saving /assets/photos/1/original/download.png
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 162674ms (ActiveRecord: 4.2ms)
+
+Seahorse::Client::NetworkingError (execution expired):
+  app/controllers/employees_controller.rb:47:in `update'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.9ms)
+
+
+Started PATCH "/employees/1" for 10.0.2.2 at 2017-05-24 15:22:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9D3yYiVhSp3N4qWsoDqNKOIz3hV0HExvasgVHtfilN8EoN86ef78l7u1UagOWUUCSKDEjY0oaXO8SHPyJyoF/A==", "employee"=>{"name"=>"Jonathan Salazar", "profession"=>"Ing. Sistemas Computacionales de mentiritas", "email"=>"jonathansalazar96@gmail.com", "cellphone"=>"98799246", "birth_at"=>"1996-06-06", "birth_place"=>"San Pedro Sula", "work_id"=>"21102", "date_admission"=>"2017-02-22", "RAP_code"=>"0501199606017", "salary"=>"50000.0", "gender"=>"Hombre", "address"=>"Bo. San Cristobal", "identity_number"=>"0501199606017", "base_belong"=>"Pruebas", "contract_type"=>"Permanente", "civil_status"=>"Soltero", "bank_account"=>"255994", "employee_status"=>"true", "blood_type"=>"O-", "emergency_contact_name"=>"Johan Salazar", "emergency_contact_number"=>"33720579", "image"=>#<ActionDispatch::Http::UploadedFile:0xb3666120 @tempfile=#<Tempfile:/tmp/RackMultipart20170524-4353-1i2rq1g.png>, @original_filename="download.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"employee[image]\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "work_structure_id"=>"1"}, "commit"=>"Actualizar", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEmployee Load (0.2ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+[paperclip] Trying to link /tmp/RackMultipart20170524-4353-1i2rq1g.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-9z4rpq.png
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420170524-4353-9z4rpq.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-1omnpdp.png
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420170524-4353-1omnpdp.png'
+  [1m[36mEmployee Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "employees" WHERE ("employees"."work_id" = 21102 AND "employees"."id" != 1) LIMIT 1[0m
+  [1m[35mEmployee Exists (0.4ms)[0m  SELECT  1 AS one FROM "employees" WHERE ("employees"."name" = 'Jonathan Salazar' AND "employees"."id" != 1) LIMIT 1
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420170524-4353-9z4rpq.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-rsc5dl.png
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420170524-4353-rsc5dl.png'
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "employees" SET "image_file_name" = $1, "image_content_type" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "employees"."id" = $6[0m  [["image_file_name", "download.png"], ["image_content_type", "image/png"], ["image_file_size", 2072], ["image_updated_at", "2017-05-24 15:22:36.895153"], ["updated_at", "2017-05-24 15:22:36.908445"], ["id", 1]]
+[paperclip] saving /assets/photos/1/original/download.png
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 4.4ms)
+
+ArgumentError (Credentials given are not a path, file, proc, or hash.):
+  app/controllers/employees_controller.rb:47:in `update'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.3ms)
+
+
+Started GET "/employees/1" for 10.0.2.2 at 2017-05-24 15:22:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmployee Load (0.2ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mWorkStructure Load (0.2ms)[0m  [1mSELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAbility Load (0.6ms)[0m  [1mSELECT "abilities".* FROM "abilities" INNER JOIN "employee_abilities" ON "abilities"."id" = "employee_abilities"."ability_id" WHERE "employee_abilities"."employee_id" = $1[0m  [["employee_id", 1]]
+  [1m[35mEducation Load (0.7ms)[0m  SELECT "educations".* FROM "educations" WHERE "educations"."employee_id" = $1  [["employee_id", 1]]
+  [1m[36mWorkExp Load (0.2ms)[0m  [1mSELECT "work_exps".* FROM "work_exps" WHERE "work_exps"."employee_id" = $1[0m  [["employee_id", 1]]
+  [1m[35mDependant Load (0.2ms)[0m  SELECT "dependants".* FROM "dependants" WHERE "dependants"."employee_id" = $1  [["employee_id", 1]]
+  [1m[36mTraining Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "trainings" INNER JOIN "training_employees" ON "trainings"."id" = "training_employees"."training_id" WHERE "training_employees"."employee_id" = $1 LIMIT 1[0m  [["employee_id", 1]]
+  [1m[35mTraining Load (0.2ms)[0m  SELECT "trainings".* FROM "trainings" INNER JOIN "training_employees" ON "trainings"."id" = "training_employees"."training_id" WHERE "training_employees"."employee_id" = $1  [["employee_id", 1]]
+  [1m[36mTrainingEmployee Load (0.2ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT "abilities"."ability", "abilities"."id" FROM "abilities" INNER JOIN "work_structure_abilities" ON "abilities"."id" = "work_structure_abilities"."ability_id" WHERE "work_structure_abilities"."work_structure_id" = $1  [["work_structure_id", 1]]
+  Rendered employees/show.html.erb within layouts/application (213.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_sidenav.html.erb (16.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_topnav.html.erb (7.9ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 1403ms (Views: 1089.7ms | ActiveRecord: 12.2ms)
+
+
+Started PATCH "/employees/1" for 10.0.2.2 at 2017-05-24 15:22:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9D3yYiVhSp3N4qWsoDqNKOIz3hV0HExvasgVHtfilN8EoN86ef78l7u1UagOWUUCSKDEjY0oaXO8SHPyJyoF/A==", "employee"=>{"name"=>"Jonathan Salazar", "profession"=>"Ing. Sistemas Computacionales de mentiritas", "email"=>"jonathansalazar96@gmail.com", "cellphone"=>"98799246", "birth_at"=>"1996-06-06", "birth_place"=>"San Pedro Sula", "work_id"=>"21102", "date_admission"=>"2017-02-22", "RAP_code"=>"0501199606017", "salary"=>"50000.0", "gender"=>"Hombre", "address"=>"Bo. San Cristobal", "identity_number"=>"0501199606017", "base_belong"=>"Pruebas", "contract_type"=>"Permanente", "civil_status"=>"Soltero", "bank_account"=>"255994", "employee_status"=>"true", "blood_type"=>"O-", "emergency_contact_name"=>"Johan Salazar", "emergency_contact_number"=>"33720579", "image"=>#<ActionDispatch::Http::UploadedFile:0xb2529bb4 @tempfile=#<Tempfile:/tmp/RackMultipart20170524-4353-axrtlj.png>, @original_filename="download.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"employee[image]\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "work_structure_id"=>"1"}, "commit"=>"Actualizar", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+[paperclip] Trying to link /tmp/RackMultipart20170524-4353-axrtlj.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-2uc94e.png
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420170524-4353-2uc94e.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-tt5ddz.png
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420170524-4353-tt5ddz.png'
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "employees" WHERE ("employees"."work_id" = 21102 AND "employees"."id" != 1) LIMIT 1[0m
+  [1m[35mEmployee Exists (0.2ms)[0m  SELECT  1 AS one FROM "employees" WHERE ("employees"."name" = 'Jonathan Salazar' AND "employees"."id" != 1) LIMIT 1
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420170524-4353-2uc94e.png to /tmp/fd456406745d816a45cae554c788e75420170524-4353-wgsato.png
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420170524-4353-wgsato.png'
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "employees" SET "image_file_name" = $1, "image_content_type" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "employees"."id" = $6[0m  [["image_file_name", "download.png"], ["image_content_type", "image/png"], ["image_file_size", 2072], ["image_updated_at", "2017-05-24 15:22:38.811652"], ["updated_at", "2017-05-24 15:22:38.823364"], ["id", 1]]
+[paperclip] saving /assets/photos/1/original/download.png
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.5ms)
+
+ArgumentError (Credentials given are not a path, file, proc, or hash.):
+  app/controllers/employees_controller.rb:47:in `update'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.2ms)
+
+
+Started GET "/employees/1" for 10.0.2.2 at 2017-05-24 15:22:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmployee Load (0.1ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mWorkStructure Load (0.2ms)[0m  [1mSELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAbility Load (0.2ms)[0m  [1mSELECT "abilities".* FROM "abilities" INNER JOIN "employee_abilities" ON "abilities"."id" = "employee_abilities"."ability_id" WHERE "employee_abilities"."employee_id" = $1[0m  [["employee_id", 1]]
+  [1m[35mEducation Load (0.2ms)[0m  SELECT "educations".* FROM "educations" WHERE "educations"."employee_id" = $1  [["employee_id", 1]]
+  [1m[36mWorkExp Load (0.1ms)[0m  [1mSELECT "work_exps".* FROM "work_exps" WHERE "work_exps"."employee_id" = $1[0m  [["employee_id", 1]]
+  [1m[35mDependant Load (0.3ms)[0m  SELECT "dependants".* FROM "dependants" WHERE "dependants"."employee_id" = $1  [["employee_id", 1]]
+  [1m[36mTraining Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "trainings" INNER JOIN "training_employees" ON "trainings"."id" = "training_employees"."training_id" WHERE "training_employees"."employee_id" = $1 LIMIT 1[0m  [["employee_id", 1]]
+  [1m[35mTraining Load (0.2ms)[0m  SELECT "trainings".* FROM "trainings" INNER JOIN "training_employees" ON "trainings"."id" = "training_employees"."training_id" WHERE "training_employees"."employee_id" = $1  [["employee_id", 1]]
+  [1m[36mTrainingEmployee Load (0.3ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "training_employees".* FROM "training_employees" WHERE (training_id = 3 AND employee_id = 1)  ORDER BY "training_employees"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "work_structures".* FROM "work_structures" WHERE "work_structures"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT "abilities"."ability", "abilities"."id" FROM "abilities" INNER JOIN "work_structure_abilities" ON "abilities"."id" = "work_structure_abilities"."ability_id" WHERE "work_structure_abilities"."work_structure_id" = $1  [["work_structure_id", 1]]
+  Rendered employees/show.html.erb within layouts/application (81.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_sidenav.html.erb (16.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_topnav.html.erb (5.2ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+Completed 200 OK in 914ms (Views: 906.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.self-aff6cbe4c1ecea3d205a917d984e68bd7af3124f187406ecb0fbce6cd915279c.css?body=1" for 10.0.2.2 at 2017-05-24 15:22:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/flot/jquery.flot.self-705d7592a526517fe86a873dd3aa15f58ce66a7953036fe087b44cd70521f0cc.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/flot/jquery.flot.pie.self-33ca88cc4a7371598cb8fa2d30eeaddcecb19184d16161873c7c1e632447c3b5.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/flot/jquery.flot.orderBars.self-1310e7cf40dfc527b1828bdfa8e62ba12341da3b0c7bc4883ec3976103c7e790.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/flot/jquery.flot.time.min.self-42e80da9d580f1cd692913e466a0a35720994cd42aa2bf940d419142bf70ae67.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/flot/date.self-dd103d36715d4e9beae419cc0328daa08d388182e31fce53e6c95e04c826f014.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/flot/jquery.flot.spline.self-78f8d0e8dfaa7a73b069749d22fb3f92c7de0cf39198cdd3531184a89c8f44a3.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/flot/jquery.flot.stack.self-77107f0e9fec22d48d33184fec10aa3335cfb4469305a20d0885662e9c8716f7.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/flot/curvedLines.self-29a3f7497ffd95027475ad2f947b8a6c57156690e858a8780923864a563532c0.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/flot/jquery.flot.resize.self-2164419d35ef0c28690426670059965ff17c804b466f57a8cbcc25c479b256c9.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/progressbar/bootstrap-progressbar.min.self-a9996721a19c173901023b21df854903c6a8e2b406cd93d1464a10327d8b52a5.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/icheck/icheck.min.self-71402d4bdfd85b52b46ee005d31661013598d0d930d2f195227371538f814ab1.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/moment/moment.min.self-47f3f0f0f331b237c5584a60bfc321301c0d9a5651dd70c635af1e17be68d5bb.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/datepicker/daterangepicker.self-ed4efcc595b0d4da2fb398736b7afde3f16d1364d06cf46dad9c4e591d1ea394.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/chartjs/chart.min.self-ba2063aab36611ff08faf64bffa6a26ec0e486b6d42a732e7ddd29e6190b4f04.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/pace/pace.min.self-9bf6d667514a59744d5db2c9392aaf5595dec9c131a425ababa1cb8cddb814f2.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/nprogress.self-ee0af190efcd10748e6f1bde91255ea0bf490342f26389814d76a217f5255ff4.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/flash.self-c7b94ce6f778ffa2d56272d0d981967ab27d8ac57a75802e72fcfab9b95d1000.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/misc.self-0e372ce78b48220a519076bf1fa0fa736c4e8ba2176fcb8ab22aae032a2b768e.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e0d5f21b64a732e2c0deebae442940536c7508f8b9c04db3f6beb85aec114efd.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gentelella/production/js/custom.self-4f0ced23cee8da0b88915f10b145d6df88298f210a750017ccb1176aa7fbdd0f.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/images/original/missing.png" for 10.0.2.2 at 2017-05-24 15:22:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /home/vagrant/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/vagrant/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/vagrant/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (82.0ms)
+
+
+Started GET "/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2" for 10.0.2.2 at 2017-05-24 15:22:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/footermanifest.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 10.0.2.2 at 2017-05-24 15:22:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/gota-1b3721d513f5886595a3d49199d5f0d5751045c849ed23091e745418ec52bbd2.png" for 10.0.2.2 at 2017-05-24 15:22:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
