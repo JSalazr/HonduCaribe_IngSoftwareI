@@ -79,7 +79,9 @@ class EmployeesController < ApplicationController
   end
 
   def bonoEducativo
-    @employees = Employee.all
+    Employee.TieneHijosMenores
+    @employees = Employee.where(hasChildren: true)
+
   end
 
   def reactivar
