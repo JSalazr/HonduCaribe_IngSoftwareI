@@ -31,6 +31,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'carrierwave', '~> 1.0'
 
+gem "paperclip", git: "https://github.com/thoughtbot/paperclip.git", branch: "master"
+gem 'aws-sdk'
+gem 'fog'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
