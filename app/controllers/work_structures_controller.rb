@@ -37,6 +37,11 @@ class WorkStructuresController < ApplicationController
     end
   end
 
+  def dept
+    @work_structures = WorkStructure.where(["department like ?", params[:department]])
+    @dept = params[:department].to_s
+  end
+
   protected
 
     def work_structure_params

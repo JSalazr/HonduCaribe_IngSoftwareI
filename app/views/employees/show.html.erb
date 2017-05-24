@@ -115,7 +115,7 @@
                       <!-- end of skills -->
 
                     </div>
-                    <div class="col-md-9 col-sm-9 col-xs-12">con
+                    <div class="col-md-9 col-sm-9 col-xs-12">
                       <div class="" role="tabpanel" data-example-id="togglable-tabs">
                         <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                           <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Informacion General</a>
@@ -127,6 +127,8 @@
                           <li role="presentation" class=""><a href="#tab_content4" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Dependientes</a>
                           </li>
                           <li role="presentation" class=""><a href="#tab_content5" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Capacitaciones</a>
+                          </li>
+                          <li role="presentation" class=""><a href="#tab_content6" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Horas</a>
                           </li>
                         </ul>
                         <div id="myTabContent" class="tab-content">
@@ -300,6 +302,31 @@
                               <% end %>
 
                           </div>
+                          <div role="tabpanel" class="tab-pane fade" id="tab_content6" aria-labelledby="profile-tab" style="text-align: center">
+                            <% if @employee.hours.any? %>
+                              <table class="data table table-striped no-margin" style="text-align: center; width: 100%">
+                              	<thead>
+                              		<tr>
+                                    <th style= "text-align: center">Hora de entrada</th>
+                              			<th style= "text-align: center">Hora de salida</th>
+                              		</tr>
+                              	</thead>
+                              	<tbody>
+                              			<%- @employee.hours.each do |f| %>
+                              				<tr>
+                              					<td><%= nice_date_time(f.time_in) %></td>
+                              					<td><%= nice_date_time(f.time_out) %></td>
+                              				</tr>
+                              			<%- end %>
+                              	</tbody>
+                              </table>
+                              <% else %>
+                                <p><em>No hay Informacion.</em></p>
+                              <% end %>
+                              <%= link_to new_employee_hour_path(@employee), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#addHours', class: "btn btn-success"} do %>
+                                <i class="fa fa-edit m-right-xs"></i> Anadir Horas
+                              <% end %>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -416,3 +443,30 @@
             </div>
           </div>
         </div>
+
+        <div class="modal fade" id="addHours" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <h4 class="modal-title" id="myModalLabel">Agregar Habilidad</h4>
+            </div>
+            <%= form_for [@employee, @hour] do |f| %>
+            <div class="modal-body">
+              <div class="form-group">
+              <%= label :start_date, "Fecha y Hora de Entrada" %>
+              <%= datetime_local_field(:hour, :time_in) %>
+            </div>
+            <div class="form-group">
+            <%= label :start_date, "Fecha y Hora de Salida" %>
+            <%= datetime_local_field(:hour, :time_out) %>
+            </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <%= f.submit "Crear" , class: "btn btn-primary"%>
+            </div>
+            <%- end %>
+          </div>
+        </div>
+      </div>
