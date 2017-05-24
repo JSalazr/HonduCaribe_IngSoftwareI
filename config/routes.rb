@@ -58,7 +58,7 @@ Rails.application.routes.draw do
   get 'reactivar', to: "employees#reactivar"
   get 'comparacion', to: "employees#comparacion"
 
-  get "/bonoEducativo" => "employees#bonoEducativo"
+  get "/BonoEducativo" => "employees#BonoEducativo"
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   delete "/logout" => "sessions#destroy"
