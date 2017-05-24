@@ -42,14 +42,14 @@
                   <%= f.number_field :salary, class: "form-control" %>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Genero</label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <div id="gender" class="btn-group" data-toggle="buttons">
                       <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                          <%= f.radio_button :gender, "Hombre" %> &nbsp; Male &nbsp;
+                          <%= f.radio_button :gender, "Hombre" %> &nbsp; Masculino &nbsp;
                       </label>
                       <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                        <%= f.radio_button :gender, "Mujer" %> Female
+                        <%= f.radio_button :gender, "Mujer" %> Femenino
                       </label>
                     </div>
                   </div>
@@ -97,14 +97,15 @@
                   <%= f.label :avatar, "Imagen" %>
                   <%= f.file_field :avatar %>
                 </div>
-                
+
 
                 <div>
                   <%= f.label :work_structure_id, "Puesto" %>
-                  <%= f.select(:work_structure_id, options_for_select(WorkStructure.all.pluck(:department, :id)))%>
-
-
-
+                  <%= f.select(:work_structure_id) do %>
+                    <% WorkStructure.all.each do |a| -%>
+                      <%= content_tag(:option, a.department + " - " + a.area, value: a.id) %>
+                    <% end %>
+                  <%end%>
                 </div>
               </div>
               <br>
