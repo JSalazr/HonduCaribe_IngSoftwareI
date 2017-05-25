@@ -1,5 +1,12 @@
 class EmployeesController < ApplicationController
 
+  def hours_show
+    respond_to do |format|
+      format.html
+      format.js { render "hours_show", locals: {employee: Employee.find(params[:employee_id]), from: params[:report][:from], to: params[:report][:to]}}
+    end
+  end
+
   def hours
     @employees = Employee.where(employee_status: true)
 
