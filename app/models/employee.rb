@@ -47,6 +47,10 @@ class Employee < ActiveRecord::Base
 		["Ejemplo1", "Ejemplo2", "Ejemplo3"]
 	end
 
+	def self.tiposhorarios
+		["Diurno", "Mixto", "Nocturno"]
+	end
+
 	def self.age(dob)
 		now = Time.now.utc.to_date
 		now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
