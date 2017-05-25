@@ -3,4 +3,8 @@ class Training < ActiveRecord::Base
   has_many :employees, :through => :training_employees
 
   belongs_to :institution
+
+  def self.categories
+    ["Capacitacion", "Charla", "Seminario", "Taller"];
+  end
 end
