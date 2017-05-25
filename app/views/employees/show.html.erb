@@ -130,6 +130,8 @@
                           </li>
                           <li role="presentation" class=""><a href="#tab_content6" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Horas</a>
                           </li>
+                          <li role="presentation" class=""><a href="#tab_content7" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Perfil Comparativo</a>
+                          </li>
                         </ul>
                         <div id="myTabContent" class="tab-content">
                           <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
@@ -326,6 +328,71 @@
                               <%= link_to new_employee_hour_path(@employee), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#addHours', class: "btn btn-success"} do %>
                                 <i class="fa fa-edit m-right-xs"></i> Anadir Horas
                               <% end %>
+                          </div>
+
+                          <div role="tabpanel" class="tab-pane fade" id="tab_content7" aria-labelledby="profile-tab" style="text-align: center">
+
+                            <div class="" border="1" style="float: left">
+
+                            <% if @employee.educations.any? %>
+                              <table class="data table table-striped no-margin" style="text-align: center; ">
+                                <thead>
+                                  <tr>
+                                    <th style= "text-align: center">Institucion</th>
+                                    <th style= "text-align: center">Titulo</th>
+                                    <th style= "text-align: center">Fecha Inicio</th>
+                                    <th style= "text-align: center">Fecha Culminacion</th>
+                                    <th style= "text-align: center">Completo</th>
+                                    <th style= "text-align: center">Constancia</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <%- @employee.educations.each do |f| %>
+                                      <tr>
+                                        <td><%= f.school_name %></td>
+                                        <td><%= f.title_description %></td>
+                                        <td><%= nice_date(f.year_start)  %></td>
+                                        <td><%= nice_date(f.year_end)  %></td>
+                                        <% if f.completed %>
+                                          <td>Si</td>
+                                        <% else %>
+                                          <td>No</td>
+                                        <% end %>
+                                        <td><%= link_to "Descargar", f.constancia_url, :target => "_blank" %></td>
+                                      </tr>
+                                    <%- end %>
+                                </tbody>
+                              </table>
+                              <% else %>
+                                <p><em>No hay Informacion.</em></p>
+                              <% end %>
+                              <%= link_to new_employee_education_path(@employee), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#addEducation', class: "btn btn-success"} do %>
+                                <i class="fa fa-edit m-right-xs"></i> Anadir Estudio
+                              <% end %>
+                            </div>
+
+                            <div border="1" class="" style="float: left; widht: 70%; margin-left: 40px">
+
+                              <table class="data table table-striped no-margin" style="text-align: center; width: 100%">
+                                <thead>
+                                  <tr>
+                                    <th style= "text-align: center">Habilidades De Puesto</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                <%-if @work_structure_of_employee.abilities.any? %>
+                                    <%- @work_structure_of_employee.abilities.each do |f| %>
+                                      <tr>
+                                        <td><%= f.ability %></td>
+                                      </tr>
+                                    <%- end %>
+                                <% else %>
+                                <p><em>No hay habilidades</em></p>
+                                <% end %>
+                                </tbody>
+                            </table>
+                            </div>
+
                           </div>
                         </div>
                       </div>
