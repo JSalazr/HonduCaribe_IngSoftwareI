@@ -145,16 +145,12 @@
       <%= form_for [@training, @training_employee] do |f| %>
       <div class="modal-body">
         <div class="form-group">
-          <%= f.label :employee_id, "Numero de Empleado" %>
+          <%= f.label :employee_id, "Empleado" %>
           <%= f.select(:employee_id) do %>
             <% Employee.where("employee_status = true").each do |a| -%>
               <%= content_tag(:option, a.work_id.to_s + " - " + a.name, value: a.id) %>
             <% end %>
           <%end%>
-        </div>
-        <div>
-          <%= f.label :work_structur_id, "Puesto" %>
-
         </div>
       </div>
       <div class="modal-footer">
