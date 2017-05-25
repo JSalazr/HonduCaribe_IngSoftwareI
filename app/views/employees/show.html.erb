@@ -54,7 +54,7 @@
                       <ul class="list-unstyled user_data">
                         <%if(WorkStructure.find(@employee.work_structure_id)) %>
                         <li>
-                          <i class="fa fa-user user-profile-icon"></i> <%= WorkStructure.find(@employee.work_structure_id).department %>
+                          <i class="fa fa-user user-profile-icon"></i> <%= WorkStructure.find(@employee.work_structure_id).department %> - <%= WorkStructure.find(@employee.work_structure_id).area %>
                         </li>
                         <%end%>
                         <li>
@@ -95,23 +95,6 @@
                       <br />
 
                       <!-- start skills -->
-                      <h4>Habilidades</h4>
-                      <% if @employee.abilities.any? %>
-                          <ul class="user_data">
-                              <%- @employee.abilities.each do |f| %>
-                                  <li>
-                                    <p>
-                                      <%=f.ability %>
-                                    </p>
-                                  </li>
-                              <%- end %>
-                          </ul>
-                        <% else %>
-                          <p><em>No hay Informacion.</em></p>
-                        <% end %>
-                        <%= link_to new_employee_ability_path(@employee), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#addAbility', class: "btn btn-success"} do %>
-                          <i class="fa fa-edit m-right-xs"></i> Anadir Habilidad
-                        <% end %>
                       <!-- end of skills -->
 
                     </div>

@@ -146,7 +146,15 @@
       <div class="modal-body">
         <div class="form-group">
           <%= f.label :employee_id, "Numero de Empleado" %>
-          <%= f.select(:employee_id, options_for_select(Employee.where("employee_status = true").pluck(:name, :id)))%>
+          <%= f.select(:employee_id) do %>
+            <% Employee.where("employee_status = true").each do |a| -%>
+              <%= content_tag(:option, a.work_id + " - " + a.name, value: a.id) %>
+            <% end %>
+          <%end%>
+        </div>
+        <div>
+          <%= f.label :work_structur_id, "Puesto" %>
+
         </div>
       </div>
       <div class="modal-footer">
