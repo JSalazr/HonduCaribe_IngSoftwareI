@@ -32,6 +32,7 @@ class EmployeesController < ApplicationController
     @work_structures = WorkStructure.all
     @employee_ability = @employee.employee_abilities.build
     @hour = @employee.hours.build
+    @work_structure_of_employee = WorkStructure.find_by_id(@employee.work_structure_id)
   end
 
   def new
