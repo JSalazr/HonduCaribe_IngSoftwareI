@@ -27,7 +27,7 @@
             <div class="clearfix"></div>
           </div>
           <%= render partial: "partials/errors", locals: { obj: @employee } %>
-          <%= form_for (@employee, multipart: true) do |f| %>
+          <%= form_for @employee do |f| %>
             <%= render partial: "form", locals: {f: f} %>
             <div class="form-group" style="margin: 0 auto; display: block;">
               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

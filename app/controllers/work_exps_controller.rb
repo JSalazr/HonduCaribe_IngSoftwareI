@@ -11,8 +11,7 @@ class WorkExpsController < ApplicationController
   if @work_exp.save
     redirect_to @employee,  notice: "Se agrego con exito"
   else
-    render :new
-  end
+    redirect_to @employee
 end
 
 

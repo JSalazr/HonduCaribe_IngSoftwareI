@@ -185,7 +185,7 @@
                                         <% else %>
                                           <td>No</td>
                                         <% end %>
-                                        <td><%= link_to "Descargar", f.constancia_url, :target => "_blank" %></td>
+                                        <td><%= link_to "Descargar",  f.document.url %></td>
                               				</tr>
                               			<%- end %>
                               	</tbody>
@@ -217,7 +217,7 @@
                               					<td><%= f.position %></td>
                               					<td><%= nice_date(f.year_start)  %></td>
                                         <td><%= nice_date(f.year_end)  %></td>
-                                        <td><%= link_to "Descargar", f.constancia_url, :target => "_blank" %></td>
+                                        <td><%= link_to "Descargar", f.document.url %></td>
                               				</tr>
                               			<%- end %>
                               	</tbody>
@@ -388,7 +388,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 <h4 class="modal-title" id="myModalLabel">Agregar Experiencia Laboral</h4>
               </div>
-              <%= form_for ([@employee, @work_exp], multipart: true) do |f| %>
+              <%= form_for [@employee, @work_exp] do |f| %>
               <div class="modal-body">
                 <div class="form-group">
                   <%= f.label :company_name, "Institucion" %>
@@ -427,7 +427,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 <h4 class="modal-title" id="myModalLabel">Agregar Habilidad</h4>
               </div>
-              <%= form_for ([@employee, @employee_ability], multipart: true) do |f| %>
+              <%= form_for [@employee, @employee_ability] do |f| %>
               <div class="modal-body">
                 <%= f.hidden_field :employee_id, value: @employee.id %>
                 <div class="form-group">

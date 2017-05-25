@@ -11,7 +11,7 @@ class EducationsController < ApplicationController
   if @education.save
     redirect_to @employee,  notice: "Se agrego con exito"
   else
-    render :new
+    redirect_to @employee
   end
 end
 

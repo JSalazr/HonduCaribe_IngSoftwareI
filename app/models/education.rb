@@ -7,11 +7,11 @@ class Education < ActiveRecord::Base
 	:path => "/assets/documents/:employee_id/:id/:basename.:extension",
 	:s3_host_name => "s3-us-west-2.amazonaws.com",
 	s3_credentials: {
-		bucket: ENV.fetch('S3_BUCKET_NAME'),
+    bucket: ENV.fetch('S3_BUCKET_NAME'),
     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
     secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
     s3_region: ENV.fetch('AWS_REGION'),
   }
 
-	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png",  "application/force-download", "application/doc", "application/docx"]
+	validates_attachment_content_type :document, :content_type => ["application/force-download", "application/doc", "application/docx"]
 end
