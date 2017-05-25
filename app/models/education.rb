@@ -4,7 +4,7 @@ class Education < ActiveRecord::Base
 	:storage => :s3,
 	:s3_permissions => 'public-read-write',
 	:url => "s3-us-west-2.amazonaws.com/honducariberrhh",
-	:path => "/assets/documents/:employee_id/:id/:basename.:extension",
+	:path => "/assets/documents/:id/:basename.:extension",
 	:s3_host_name => "s3-us-west-2.amazonaws.com",
 	s3_credentials: {
     bucket: ENV.fetch('S3_BUCKET_NAME'),
