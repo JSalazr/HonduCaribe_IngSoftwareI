@@ -13,5 +13,5 @@ class Education < ActiveRecord::Base
     s3_region: ENV.fetch('AWS_REGION'),
   }
 
-	validates_attachment_content_type :document, :content_type => ["application/force-download", "application/doc", "application/docx"]
+	validates_attachment_content_type :document, :content_type => ["application/force-download", "application/pdf", "application/doc", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
 end

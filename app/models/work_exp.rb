@@ -8,11 +8,11 @@ class WorkExp < ActiveRecord::Base
 	:s3_host_name => "s3-us-west-2.amazonaws.com",
   s3_credentials: {
     bucket: 'honducariberrhh',
-    access_key_id: 'AKIAID2VBHCVFGZAJ4SQ',
-    secret_access_key: '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',
+    access_key_id: 'AKIAIISXMSVYGIZWUOPA',
+    secret_access_key: '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',
     s3_region: 'us-west-2',
   }
 
 
-	validates_attachment_content_type :document, :content_type => ["image/jpg", "image/jpeg", "image/png",  "application/force-download", "application/doc", "application/docx"]
+	validates_attachment_content_type :document, :content_type => ["application/force-download", "application/pdf", "application/doc", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
 end

@@ -5,14 +5,15 @@ class WorkExpsController < ApplicationController
   end
 
   def create
-  @employee = Employee.find(params[:employee_id])
-  @work_exp = @employee.work_exps.build(work_exps_params)
+    @employee = Employee.find(params[:employee_id])
+    @work_exp = @employee.work_exps.build(work_exps_params)
 
-  if @work_exp.save
-    redirect_to @employee,  notice: "Se agrego con exito"
-  else
-    redirect_to @employee
-end
+    if @work_exp.save
+      redirect_to @employee,  notice: "Se agrego con exito"
+    else
+      redirect_to @employee
+    end
+  end
 
 
 protected
